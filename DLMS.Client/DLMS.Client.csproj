@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetEnv" Version="3.1.1" />
+    <PackageReference Include="Gurux.Common" Version="8.4.2503.602" />
+    <PackageReference Include="Gurux.DLMS" Version="9.0.2508.2201" />
+    <PackageReference Include="Gurux.MQTT" Version="8.1.2503.1301" />
+    <PackageReference Include="Gurux.Net" Version="8.4.2503.1001" />
+    <PackageReference Include="Gurux.Serial" Version="8.4.2503.603" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>
