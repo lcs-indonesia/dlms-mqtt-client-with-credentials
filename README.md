@@ -30,6 +30,17 @@ git clone https://github.com/yourusername/dlms-mqtt-client-with-credentials.git
 cd dlms-mqtt-client-with-credentials
 dotnet build
 ```
+
+## ⚙️ Environment Variables Schema
+You can configure MQTT connection settings using environment variables.
+These are automatically loaded via .env or system environment configuration.
+```env
+APP_MqttSettings__Host=localhost
+APP_MqttSettings__Port=1883
+APP_MqttSettings__Username=user
+APP_MqttSettings__Password=pass
+```
+
 ## 🔧 Changes Made
 
 ### 1. Added Username and Password Properties
