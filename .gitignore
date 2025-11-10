@@ -416,3 +416,4 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+/DLMS.Client/trace.txt
