@@ -73,6 +73,11 @@ public class Settings
         bool modeEDefaultValues = true;
         string[] tmp;
         List<GXCmdParameter> parameters = GXCommon.GetParameters(args, "h:p:c:s:r:i:It:a:P:g:S:C:n:v:o:T:A:B:D:d:l:F:m:E:V:G:M:K:N:W:w:f:L:q:b:R:ux:O:");
+        if (parameters.Count == 0)
+        {
+            ShowHelp();
+            return 1;
+        }
         foreach (GXCmdParameter it in parameters)
         {
             switch (it.Tag)
