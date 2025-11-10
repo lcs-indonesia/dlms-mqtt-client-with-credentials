@@ -4,7 +4,7 @@ using DotNetEnv;
 
 Env.Load("../../../.env");
 //var argString = "-c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q a898680b-48b2-47a5-acfb-b7a34aa7da7c/1";
-//arg example ::"-c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q dlmsbridge/123456789"
+//arg example ::"-c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q dlmsbridge/123456789 -g 0.0.1.0.0.255:2"
 var settings = new Settings();
 var mqttSettings = new MqttSettings
 {
@@ -25,5 +25,13 @@ settings.media = new GXMqtt()
 
 Console.WriteLine("Connecting to meter...");
 using var client = new DLMSClient(args, settings);
-Console.WriteLine("Reading clock...");
-client.ReadObject([new("0.0.1.0.0.255", 2)]);
+
+var reads = args[Array.IndexOf(args, "-g") + 1].Split(";");
+
+
+foreach (var read in reads)
+{
+    Console.WriteLine("Reading object {0}...", read);
+    var part = read.Split(":");
+    client.ReadObject([new(part[0], int.Parse(part[1]))]);
+}
