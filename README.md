@@ -66,3 +66,12 @@ var options = builder.Build();
 - ✅ Works with all existing DLMS MQTT setups
 - ✅ Still supports unauthenticated brokers
 - ✅ Tested with Mosquitto and HiveMQ brokers
+
+## 🏃 Running the Client
+
+After building the project, you can run the DLMS MQTT client from the `dlms-client` directory.  
+Use the following command to pass application-specific arguments correctly:
+
+```bash
+cd dlms-mqtt-client-with-credentials/dlms-client
+dotnet run -- -c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q <bridge/topic>
