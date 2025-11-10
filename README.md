@@ -74,4 +74,4 @@ Use the following command to pass application-specific arguments correctly:
 
 ```bash
 cd dlms-mqtt-client-with-credentials/dlms-client
-dotnet run -- -c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q <bridge/topic>
+dotnet run -- -c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q <bridge/topic> -g 0.0.1.0.0.255:2
