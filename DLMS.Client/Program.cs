@@ -1,8 +1,11 @@
-﻿using DLMS.Client;
+﻿using System.Text.Json;
+using DLMS.Client;
 using DLMS.Client.GXMedia.Mqtt;
 using DotNetEnv;
 
 Env.Load("../../../.env");
+Env.Load(".env");
+Console.WriteLine(Directory.GetCurrentDirectory());
 //var argString = "-c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q a898680b-48b2-47a5-acfb-b7a34aa7da7c/1";
 //arg example ::"-c 18 -a High -P Gurux -w 1 -f 128 -t Verbose -q dlmsbridge/123456789 -g 0.0.1.0.0.255:2"
 var settings = new Settings();
@@ -13,6 +16,7 @@ var mqttSettings = new MqttSettings
     Username = Env.GetString("APP_MqttSettings__Username"),
     Password = Env.GetString("APP_MqttSettings__Password"),
 };
+Console.WriteLine("{0}", JsonSerializer.Serialize(mqttSettings));
 settings.media = new GXMqtt()
 {
     Port = mqttSettings.Port,
