@@ -63,9 +63,8 @@ var options = builder.Build();
 
 ## 🧩 Compatibility
 
-- ✅ Works with all existing DLMS MQTT setups
 - ✅ Still supports unauthenticated brokers
-- ✅ Tested with Mosquitto and HiveMQ brokers
+- ✅ Tested with Mosquitto
 
 ## 🏃 Running the Client
 
